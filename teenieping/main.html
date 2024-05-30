@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이모션 왕국에 어서 와!</title>
+
+    <link rel="stylesheet" href="\webpage\pages.css">
+</head>
+<body>
+    <div id="total">
+        <header id="header" onclick="location.href='main.html'">
+            헤더
+        </header>
+
+        <div id="page">
+            <nav id="menu">
+                메뉴 <span style="float: right; cursor: pointer;" onclick="push()">넣기</span>
+                <div id="profile">
+                    <img src="\img\shasha.png" style="width: 100%;"> <!--프로필 이미지-->
+                    <div id="greetings"></div>
+                </div>
+                <ul>
+                    <li><a href="menu1.html">애니메이션 보기</a></li>
+                    <li><a href="menu2.html">캐릭터 보기</a></li>
+                    <li><a href="menu3.html">체크리스트</a></li>
+                    <li><a href="menu4.html">메모장</a></li>
+                    <li><a href="menu5.html">출석체크</a></li>
+                    <li><a href="menu6.html">이벤트</a></li>
+                </ul>
+            </nav>
+            <aside id="bar" style="display: none;">
+                <span style="cursor: pointer;" onclick="pull()">빼기</span>
+            </aside>
+
+            <article style="width: 100%;">
+                본 페이지
+            </article>
+        </div>
+        
+
+        <footer id="foot">
+            푸터
+        </footer>
+    </div>
+
+
+    <script src="/webpage/basic.js"></script>
+
+</body>
+</html>

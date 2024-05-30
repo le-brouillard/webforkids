@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#total {
+    margin: 10px 0px;
+    width: 1000px;
+    border: 1px solid blue;
+}
+
+
+* {
+    border: 1px solid red;
+}
+#header, #page, #foot{
+    margin: 10px;
+}
+#header, #foot {
+    padding: 30px;
+}
+#page {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+}
+#menu{
+    width: 250px;
+}
+#profile{
+    margin: 10px;
+}
+ul{
+    list-style-type: none;
+    padding-left: 10px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+article{
+    padding: 20px 30px;
+}
