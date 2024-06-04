@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이모션 왕국에 어서 와!</title>
 
-    <link rel="stylesheet" href="/webforkids/pages.css">
-    
+    <link rel="stylesheet" href="\webpage\pages.css">
+
+    <style>
+        #s1, #s2, #s3, #s4{
+            width: 200px; height: 200px;
+            display: grid;
+            margin: 10px;
+        }
+        #s1{grid-area: s1;}
+        #s2{grid-area: s2;}
+        #s3{grid-area: s3;}
+        #s4{grid-area: s4;}
+        #season{
+            display: grid;
+            grid-template-areas: 
+                "s1 s2"
+                "s3 s4";
+            place-items: center;
+        }
+    </style>
 </head>
 <body>
     <div id="total">
@@ -18,7 +36,7 @@
             <nav id="menu">
                 메뉴 <span style="float: right; cursor: pointer;" onclick="push()">넣기</span>
                 <div id="profile">
-                    <img src="\img\shasha.png" style="width: 100%;"> <!--프로필 이미지-->
+                    <img src="/img/shasha.png" style="width: 100%;"> <!--프로필 이미지-->
                     <div id="greetings"></div>
                 </div>
                 <ul>
@@ -36,6 +54,13 @@
 
             <article style="width: 100%;">
                 본 페이지
+                <h2>캐치! 티니핑 친구들을 만나보자!</h2>
+                <div id="season">
+                    <a href="menu2-1.html"><img id="s1" src="\img\s1.jpeg" alt="season1"></a>
+                    <a href="menu2-2.html"><img id="s2" src="\img\s2.png" alt="season2"></a>
+                    <a href="menu2-3.html"><img id="s3" src="\img\s3.png" alt="season3"></a>
+                    <a href="menu2-4.html"><img id="s4" src="\img\s4.png" alt="season4"></a>
+                </div>
             </article>
         </div>
         
