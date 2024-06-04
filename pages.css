@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     display: flex;
     justify-content: center;
@@ -20,6 +28,12 @@ body {
 #header, #foot {
     padding: 30px;
 }
+#header {
+    background-image: url('/img/teenieping_head.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 175.5px;
+}
 #page {
     display: flex;
     flex-direction: row;
@@ -31,7 +45,7 @@ body {
 #profile{
     margin: 10px;
 }
-ul{
+#menu>ul{
     list-style-type: none;
     padding-left: 10px;
 }
@@ -42,4 +56,16 @@ a{
 
 article{
     padding: 20px 30px;
+}
+
+#foot > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+#foot > ul > li > a:hover {
+    color: pink;
 }
