@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이모션 왕국에 어서 와!</title>
 
-    <link rel="stylesheet" href="\webpage\pages.css">
+    <link rel="stylesheet" href="/webforkids/pages.css">
     
 </head>
 <body>
@@ -36,6 +36,12 @@
 
             <article style="width: 100%;">
                 본 페이지
+                <div class="box">
+                    <h1>출석 도장을 찍자!</h1>
+                    <h4>총 출석 횟수</h4>
+                    <div id="count"></div>
+                    <button id="check">오늘의 출석도장 찍기</button>
+                </div>
             </article>
         </div>
         
@@ -47,6 +53,33 @@
 
 
     <script src="/webpage/basic.js"></script>
+    <script>
+        let count = document.getElementById('count');
+        let stamp = document.getElementById('check');
+        
+        if(count===null){
+            count.innerHTML = "0회";
+            localStorage.setItem('times', '0');
+        }
+        else{
+            number = localStorage.getItem('times');
+            if(number==null){
+                count.innerHTML = "0회";
+            }
+            else{
+                count.innerHTML = number + "회";}
+        }
+
+        stamp.addEventListener('click', stamping);
+
+        function stamping(){
+            number = localStorage.getItem('times');
+            number = Number(number) + 1;
+            localStorage.setItem('times', String(number));
+            window.location.reload()
+        }
+        
+    </script>
 
 </body>
 </html>
