@@ -1,0 +1,51 @@
+body{
+            
+    background-image: url('/img/heartful\ sky.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#total{
+    border: 3px solid rgb(255, 201, 219);
+    border-radius: 10px;
+    background-color: rgb(255, 201, 219);
+}
+
+#page, #foot{
+    background-color: white;
+    border-radius: 10px;
+}
+#page{
+    padding: 10px;
+}
+#foot{
+    font-size: 25px;
+    font-family: 'omyu_pretty';
+}
+header{
+    border-radius: 10px;
+    border: none;
+}
+#menu{
+    font-family: 'omyu_pretty';
+    font-size: 20px;
+}
+#menu, #bar{
+    background-color: rgb(255, 152, 186);
+}
+
+#profile>img{
+    background-color: white;
+}
+#profile{
+    padding-bottom: 10px;
+    background-color: rgb(255, 241, 244);
+}
+
+
+article{
+    font-family: 'omyu_pretty';
+}
+h1{
+    font-size: 40px;
+}

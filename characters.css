@@ -1,0 +1,36 @@
+
+div.character{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+    font-size: 20px;
+}
+div.character>img{
+    width: auto; height: 250px;
+}
+div.character>p{
+    width: 300px;
+}
+div.character>p>span{
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 22, 138);
+}
+
+#season > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-size: 30px;
+    margin: 0px;
+    padding: 15px 0px;
+    border-bottom: 1px solid rgb(255, 152, 186);
+}
+#page{
+    font-family: 'omyu_pretty';
+}
