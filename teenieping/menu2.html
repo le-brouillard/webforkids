@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이모션 왕국에 어서 와!</title>
 
-    <link rel="stylesheet" href="/webforkids/pages.css">
+    <link rel="stylesheet" href="/webpage/font.css">
+    <link rel="stylesheet" href="/webpage/pages.css">
+    <link rel="stylesheet" href="/webpage/design.css">
 
     <style>
         #s1, #s2, #s3, #s4{
-            width: 200px; height: 200px;
+            width: 250px; height: 250px;
             display: grid;
-            margin: 10px;
+            border-radius: 50%;
         }
         #s1{grid-area: s1;}
         #s2{grid-area: s2;}
@@ -19,6 +21,7 @@
         #s4{grid-area: s4;}
         #season{
             display: grid;
+            grid-gap: 10px;
             grid-template-areas: 
                 "s1 s2"
                 "s3 s4";
@@ -29,44 +32,47 @@
 <body>
     <div id="total">
         <header id="header" onclick="location.href='main.html'">
-            헤더
         </header>
 
         <div id="page">
             <nav id="menu">
-                메뉴 <span style="float: right; cursor: pointer;" onclick="push()">넣기</span>
+                메뉴
+                <span style="float: right; cursor: pointer; font-family: monospace;" onclick="push()">&lt;&lt;</span>
                 <div id="profile">
                     <img src="/img/shasha.png" style="width: 100%;"> <!--프로필 이미지-->
                     <div id="greetings"></div>
                 </div>
                 <ul>
                     <li><a href="menu1.html">애니메이션 보기</a></li>
-                    <li><a href="menu2.html" style="color: pink;">캐릭터 보기</a></li>
+                    <li><a href="menu2.html" style="color: white;">캐릭터 보기</a></li>
                     <li><a href="menu3.html">체크리스트</a></li>
-                    <li><a href="menu4.html">메모장</a></li>
-                    <li><a href="menu5.html">출석체크</a></li>
-                    <li><a href="menu6.html">이벤트</a></li>
+                    <li><a href="menu4.html">출석체크</a></li>
+                    <li><a href="menu5.html">이벤트</a></li>
                 </ul>
             </nav>
-            <aside id="bar" style="display: none;">
-                <span style="cursor: pointer;" onclick="pull()">빼기</span>
+            <aside id="bar" style="display: none; text-align: center;">
+                <span onclick="pull()">&gt;&gt;</span>
             </aside>
 
             <article style="width: 100%;">
-                본 페이지
-                <h2>캐치! 티니핑 친구들을 만나보자!</h2>
+                <h1>캐치! 티니핑 친구들을 만나보자!</h1><br>
                 <div id="season">
-                    <a href="menu2-1.html"><img id="s1" src="\img\s1.jpeg" alt="season1"></a>
-                    <a href="menu2-2.html"><img id="s2" src="\img\s2.png" alt="season2"></a>
-                    <a href="menu2-3.html"><img id="s3" src="\img\s3.png" alt="season3"></a>
-                    <a href="menu2-4.html"><img id="s4" src="\img\s4.png" alt="season4"></a>
+                    <a href="menu2-1.html"><img id="s1" src="/img/s1.jpeg" alt="season1"></a>
+                    <a href="menu2-2.html"><img id="s2" src="/img/s2.png" alt="season2"></a>
+                    <a href="menu2-3.html"><img id="s3" src="/img/s3.png" alt="season3"></a>
+                    <a href="menu2-4.html"><img id="s4" src="/img/s4.png" alt="season4"></a>
                 </div>
             </article>
         </div>
         
 
         <footer id="foot">
-            푸터
+            <ul>
+                <li><a href="https://www.youtube.com/@teeniepingTV">공식 유튜브</a></li>
+                <li><a href="https://bit.ly/3BEpT1g">공식 인스타그램</a></li>
+                <li><a href="https://samg.net/">출처</a></li>
+                <li><a id="maker">제작자</a></li>
+            </ul>
         </footer>
     </div>
 
