@@ -1,9 +1,3 @@
-@font-face {
-    font-family: 'ONE-Mobile-POP';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 
 
 body {
@@ -14,33 +8,47 @@ body {
 
 #total {
     margin: 10px 0px;
-    width: 1000px;
+    min-width: 1000px;
+    max-width: 1000px;
     border: 1px solid blue;
 }
 
 
 * {
     border: 1px solid red;
+    
 }
 #header, #page, #foot{
     margin: 10px;
 }
-#header, #foot {
-    padding: 30px;
+#foot {
+    padding: 0px 20px;
 }
 #header {
+    padding: 30px;
     background-image: url('/img/teenieping_head.png');
     background-repeat: no-repeat;
     background-size: contain;
-    height: 175.5px;
+    min-height: 175.2px;
+    max-height: 175.2px;
+    width: 918px;
 }
 #page {
     display: flex;
     flex-direction: row;
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
+    min-height: 500px;
 }
 #menu{
-    width: 250px;
+    width: 270px;
+}
+#bar{
+    width: 50px;
+}
+#bar>span{
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 20px;
 }
 #profile{
     margin: 10px;
@@ -49,6 +57,9 @@ body {
     list-style-type: none;
     padding-left: 10px;
 }
+#menu>ul>li{
+    margin: 15px 0px;
+}
 a{
     text-decoration: none;
     color: black;
@@ -56,6 +67,9 @@ a{
 
 article{
     padding: 20px 30px;
+}
+button:hover{
+    cursor: pointer;
 }
 
 #foot > ul {
