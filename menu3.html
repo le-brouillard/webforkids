@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이모션 왕국에 어서 와!</title>
+
+    <link rel="stylesheet" href="/webpage/font.css">
+    <link rel="stylesheet" href="/webpage/pages.css">
+    <link rel="stylesheet" href="/webpage/design.css">
+    <style>
+        div.box{
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+        }
+        #new{
+            float: right;
+        }
+        div.box>div>ul{
+            list-style-type: none;
+            padding: 0px;
+        }
+        #memo1{
+            position: relative; z-index: 1;
+            width: 150px; float: left;
+            bottom: 120px;
+        }
+        #memo2{
+            position: relative; z-index: 1;
+            width: 150px; float: right;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="total">
+        <header id="header" onclick="location.href='main.html'">
+        </header>
+
+        <div id="page">
+            <nav id="menu">
+                메뉴
+                <span style="float: right; cursor: pointer; font-family: monospace;" onclick="push()">&lt;&lt;</span>
+                <div id="profile">
+                    <img src="/img/shasha.png" style="width: 100%;"> <!--프로필 이미지-->
+                    <div id="greetings"></div>
+                </div>
+                <ul>
+                    <li><a href="menu1.html">애니메이션 보기</a></li>
+                    <li><a href="menu2.html">캐릭터 보기</a></li>
+                    <li><a href="menu3.html" style="color: white;">체크리스트</a></li>
+                    <li><a href="menu4.html">출석체크</a></li>
+                    <li><a href="menu5.html">이벤트</a></li>
+                </ul>
+            </nav>
+            <aside id="bar" style="display: none; text-align: center;">
+                <span onclick="pull()">&gt;&gt;</span>
+            </aside>
+
+            <article style="width: 100%;">
+                <h1>메모핑과 함께 할 일을 기록해 보자!</h1>
+                <div class="box">
+                    <h2>체크리스트</h2>
+                    <span id="new" style="margin-left: 200px;">추가</span>
+                    <div>
+                        <ul id="todo">
+                            <li>할일1</li>
+                        </ul>
+                    </div>
+                </div>
+                <img id="memo1" src="/img/memoping.png" alt="memoping">
+                <img id="memo2" src="/img/memoping2.png" alt="memoping">
+            </article>
+        </div>
+        
+
+        <footer id="foot">
+            <ul>
+                <li><a href="https://www.youtube.com/@teeniepingTV">공식 유튜브</a></li>
+                <li><a href="https://bit.ly/3BEpT1g">공식 인스타그램</a></li>
+                <li><a href="https://samg.net/">출처</a></li>
+                <li><a id="maker">제작자</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+    <script src="/webpage/basic.js"></script>
+    <script>
+        let a = [];
+        localStorage.setItem('todolist', JSON.stringify(a));
+    </script>
+    <script>
+
+        let listdata = JSON.parse(localStorage.getItem('todolist'));
+
+        let todo = document.getElementById("todo");
+    
+        document.getElementById("new").addEventListener('click', add);
+
+        function add(){
+            let newtodo = prompt('새로운 할 일을 입력하자!');
+            if(newtodo){
+                listdata.push(newtodo);
+                let newItem = document.createElement("li");
+                
+                newtodo = document.createTextNode(newtodo);
+            
+                newItem.appendChild(newtodo);
+
+                todo.appendChild(newItem);
+                newtodo = "";
+                localStorage.setItem('todolist', JSON.stringify(listdata));
+            }
+            
+        }
+
+        
+
+    </script>
+</body>
+</html>
