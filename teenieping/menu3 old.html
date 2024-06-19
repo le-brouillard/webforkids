@@ -71,9 +71,9 @@
             <article style="width: 100%;">
                 <h1>메모핑과 함께 할 일을 기록해 보자!</h1>
                 <div class="box">
-                    <h2 style="font-size: 35px; margin-bottom: 0px;">체크리스트</h2>
+                    <h2>체크리스트</h2>
                     <span id="new">추가</span>
-                    <div>
+                    <div style="margin-top: 0px;">
                         <ul id="todo">
                         </ul>
                     </div>
@@ -97,27 +97,21 @@
 
     <script src="/webpage/basic.js"></script>
     <script>
-        if(localStorage.getItem('todolist')===null){
-            a = [];
-            localStorage.setItem('todolist', JSON.stringify(a));
-        }
     </script>
     <script>
+        if(localStorage.getItem('todolist')===null){
+            let data = document.getElementById('todo').innerText;
+            a = data.split('\n');
+            localStorage.setItem('todolist', JSON.stringify(a));
+        }
+
         let todo = document.getElementById("todo");
         let listdata = JSON.parse(localStorage.getItem('todolist'));
 
         for(value of listdata){
             let item = document.createElement("li");
-            let del = document.createElement("button");
-            delButtonSet(del);
-            item.addEventListener("click", crossout);
-            item.style.cursor = "pointer";
-            item.style.borderBottom = "2px dotted pink";
-            item.style.paddingBottom = "6px";
-
             oldtodo = document.createTextNode(value);
             item.appendChild(oldtodo);
-            item.appendChild(del);
             todo.appendChild(item);
         }
 
@@ -129,64 +123,31 @@
             if(newtodo){
                 listdata.push(newtodo);
                 let newItem = document.createElement("li");
-                let newDel = document.createElement("button");
-                delButtonSet(newDel);
-                newItem.addEventListener("click", crossout);
-                newItem.style.cursor = "pointer";
-                newItem.style.borderBottom = "2px dotted pink";
-                newItem.style.paddingBottom = "6px";
-
+                
                 newtodo = document.createTextNode(newtodo);
             
                 newItem.appendChild(newtodo);
-                newItem.appendChild(newDel);
 
                 todo.appendChild(newItem);
                 newtodo = "";
                 localStorage.setItem('todolist', JSON.stringify(listdata));
-            }else{
-                alert('내용을 입력해줘 메모!');
             }
             
         }
 
-        function crossout(e){
-            let done = e.target;
+        document.querySelector("#todo").addEventListener('click', crossout(event.target));
 
-            a = JSON.parse(localStorage.getItem('todolist'));
-
-            done.style.textDecoration = "line-through";
-            done.style.color = "grey";
-            for(i in a){
-                if(done.innerText.slice(0, -2)===a[i])
-                    alert('축하해 메모! \n'+done.innerText.slice(0, -2)+'을(를) 완료했어!');
-            }
-            
-        }
-
-        function deleting(e){
-            let toRemove = e.target.parentElement;
-            toRemove.remove();
+        function crossout(element){
+            let done = element.innerText;
             a = JSON.parse(localStorage.getItem('todolist'));
             for(i in a){
-                if(toRemove.innerText===a[i]+'x'){
-                    a.splice(i, 1);
+                if(done===a[i]){
+                    removed = a.splice(i, 1);
+                    alert('축하해 메모! '+removed+'를 완료했어!');
                     localStorage.setItem('todolist', JSON.stringify(a));
                 }
             }
         }
-        
-        
-        function delButtonSet(d){
-            d.innerText = "x";
-            d.style.position = "relative";
-            d.style.float = "right";
-            d.style.cursor = "pointer";
-            d.style.backgroundColor = "transparent";
-            d.style.border = "none";
-            d.addEventListener("click", deleting);
-        }
-
         
 
     </script>

@@ -8,6 +8,71 @@
     <link rel="stylesheet" href="/webpage/font.css">
     <link rel="stylesheet" href="/webpage/pages.css">
     <link rel="stylesheet" href="/webpage/design.css">
+
+    <style>
+        #login{
+            display: grid;
+            place-items: center;
+        }
+        #id, #pw{
+            height: 20px;
+            margin: 10px;
+        }
+        #submit{
+            cursor: pointer;
+            width: 100px; height: auto;
+            float: right;
+            border-radius: 5px;
+            font-size: 20px;
+            font-family: 'omyu_pretty';
+            border: none;
+            background-color: rgb(255, 152, 186);
+        }
+        #submit:hover{
+            box-shadow: inset 0px 0px 60px -12px rgb(255, 22, 138);
+            background-color: rgb(255, 182, 206);
+        }
+        form{
+            display: flex;
+            flex-direction: row;
+        }
+        #cozyping{
+            width: 170px;
+            position: relative;
+            left: 20px;
+        }
+        #patping{
+            width: 200px;
+            position: relative;
+            float: right;
+            top: -40px;
+            right: 30px;
+        }
+        #partyping{
+            width: 200px;
+            position: relative;
+            top: 45px;
+            left: 120px;
+        }
+        #macaping{
+            width: 220px;
+            position: relative;
+            top: -100px;
+            left: 100px;
+        }
+        #tweetping{
+            width: 230px;
+            position: relative;
+            float: right;
+            top: -70px;
+        }
+        #owwping{
+            width: 180px;
+            position: relative;
+            left: 120px;
+            top: 0px;
+        }
+    </style>
 </head>
 <body>
     <div id="total">
@@ -19,7 +84,6 @@
             <nav id="menu">
                 &nbsp; MENU
                 <span style="float: right; cursor: pointer; font-family: monospace;" onclick="push()">&lt;&lt;</span>
-                <button style="float: right;" onclick="location.href='login.html';">로그인</button>
                 <div id="profile">
                     <img src="/img/shasha.png" style="width: 100%;"> <!--프로필 이미지-->
                     <div id="greetings"></div>
@@ -37,7 +101,24 @@
             </aside>
 
             <article style="width: 100%;">
-                <img src="">
+                <h1>이모션 왕국에 어서 와!</h1>
+                <div id="login">
+                    <form>
+                        <div style="border: 1px solid rgb(255, 152, 186); padding: 10px; margin-right: 10px;">
+                            <label name="id">♡ ID</label>
+                            <input type="text" name="id" id="id" placeholder="아이디 입력"><br>
+                            <label name="pw">♡ PW</label>
+                            <input type="password" name="pw" id="pw" placeholder="비밀번호 입력"><br>
+                        </div>
+                        <input type="submit" value="login" id="submit">
+                    </form>
+                </div>
+                <img id="cozyping" src="/img/cozyping.png" alt="cozyping">
+                <img id="patping" src="/img/patping.png" alt="patping">
+                <img id="partyping" src="/img/partyping.png" alt="partyping">
+                <img id="macaping" src="/img/macaping.png" alt="macaping">
+                <img id="owwping" src="/img/owwping.png" alt="owwping">
+                <img id="tweetping" src="/img/tweetping.png" alt="tweetping">
             </article>
         </div>
         
@@ -54,6 +135,41 @@
 
 
     <script src="/webpage/basic.js"></script>
+    <script>
+        const users = {
+            id: ['loveteenie', 'heartsping'],
+            pw: ['love1234', '5678love']
+        }
+        localStorage.setItem('users', JSON.stringify(users)); 
+    </script>
+    <script>
+        let formSubmit = document.getElementById('submit');
+        formSubmit.addEventListener('click', login_data);
+
+        let id_data = document.getElementById('id').value;
+        let pw_data = document.getElementById('pw').value;
+        
+        function login_data(){
+            users = JSON.parse(localStorage.getItem('userdata'));
+
+            if(id_data){
+                for(i in users.id){
+                    if(id_data===users.id[i]){
+                        if(pw_data===users.pw[i]){
+                            localStorage.setItem('ID', id_data);
+                        } else{{
+                            alert('회원 정보가 틀렸습니다.');
+                        }}
+                    } else{
+                        alert('존재하지 않는 회원 정보입니다.');
+                    }
+                }
+            } else{
+                alert('정보를 입력해줘 츄~');
+            }
+        }
+        
+    </script>
 
 </body>
 </html>

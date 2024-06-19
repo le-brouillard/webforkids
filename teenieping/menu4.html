@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="/webpage/design.css">
     
     <style>
+        article{
+            height: 600px;
+        }
         article>div{
             display: grid;
             justify-content: center;
@@ -19,8 +22,15 @@
             place-items: center;
             padding: 60px;
             width: 300px; height: 250px;
+            top: 300px;
+            border: 5px double rgb(255, 152, 186);
             border-radius: 50%;
             font-size: 25px;
+            background-color: rgb(252, 247, 248);
+        }
+        #count{
+            color: rgb(255, 22, 138);
+            margin-top: 5px;
         }
         article>div>img{
             position: relative;
@@ -28,6 +38,27 @@
             width: 200px;
             bottom: 270px;
             left: 300px;
+        }
+        article>img{
+            position: relative;
+            z-index: 1;
+            width: 200px;
+            bottom: 200px;
+            left: 60px;
+        }
+        #check{
+            font-size: 20px;
+            font-family: 'omyu_pretty';
+            padding: 20px;
+            width: 70px; height: 70px;
+            border-radius: 50%;
+            border: 2px dotted rgb(255, 152, 186);
+            background-color: white;
+            color: rgb(255, 152, 186);
+        }
+        #check:hover{
+            background-color: rgb(255, 152, 186);
+            color: white;
         }
     </style>
 </head>
@@ -38,7 +69,7 @@
 
         <div id="page">
             <nav id="menu">
-                메뉴
+                &nbsp; MENU
                 <span style="float: right; cursor: pointer; font-family: monospace;" onclick="push()">&lt;&lt;</span>
                 <div id="profile">
                     <img src="/img/shasha.png" style="width: 100%;"> <!--프로필 이미지-->
@@ -57,16 +88,17 @@
             </aside>
 
             <article style="width: 100%;">
-                <div>
+                <div style="margin: 0px; height: 450px;">
+                    <br><br>
                     <div class="box">
                         <h1>출석 도장을 찍자!</h1>
                         총 출석 횟수
-                        <div id="count"></div>
-                        <button type="button" id="check">오늘의 출석도장 찍기</button>
+                        <div id="count"></div><br>
+                        <button type="button" id="check">♡</button>
                     </div>
                     <img src="/img/goodping.png" alt="goodping">
                 </div>
-                
+                <img src="/img/smartping.png" alt="smartping">
             </article>
         </div>
         
@@ -83,6 +115,10 @@
 
 
     <script src="/webpage/basic.js"></script>
+    <script>
+        document.getElementById('check').addEventListener('mouseover', function (){document.getElementById('check').innerHTML = '♥';});
+        document.getElementById('check').addEventListener('mouseout', function (){document.getElementById('check').innerHTML = '♡';});
+    </script>
     <script>
         let count = document.getElementById('count');
         let stamp = document.getElementById('check');
@@ -106,7 +142,7 @@
         function stamping(){
             checkData = localStorage.getItem('timeLog');
             if(checkData==today){
-                alert('오늘은 이미 출석했어요!');
+                alert('오늘은 이미 출석했어 차캐!');
             } else{
                 number = localStorage.getItem('times');
                 number = Number(number) + 1;
