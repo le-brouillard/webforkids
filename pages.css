@@ -23,7 +23,7 @@ body {
 }
 #header {
     padding: 30px;
-    background-image: url('/img/teenieping_head.png');
+    background-image: url('/webpage/img/teenieping_head.png');
     background-repeat: no-repeat;
     background-size: contain;
     min-height: 175.2px;
