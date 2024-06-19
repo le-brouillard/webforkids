@@ -144,19 +144,20 @@
     </script>
     <script>
         let formSubmit = document.getElementById('submit');
-        formSubmit.addEventListener('click', login_data);
-
         let id_data = document.getElementById('id').value;
         let pw_data = document.getElementById('pw').value;
         
+        formSubmit.addEventListener('submit', login_data);
+
         function login_data(){
-            users = JSON.parse(localStorage.getItem('userdata'));
+            userdata = JSON.parse(localStorage.getItem('users'));
 
             if(id_data){
-                for(i in users.id){
-                    if(id_data===users.id[i]){
-                        if(pw_data===users.pw[i]){
+                for(i in userdata.id){
+                    if(id_data===userdata.id[i]){
+                        if(pw_data===userdata.pw[i]){
                             localStorage.setItem('ID', id_data);
+                            alert('어서와 츄~!');
                         } else{{
                             alert('회원 정보가 틀렸습니다.');
                         }}
