@@ -21,6 +21,7 @@ body{
 #foot{
     font-size: 25px;
     font-family: 'omyu_pretty';
+    padding: 5px 0px;
 }
 header{
     border-radius: 10px;

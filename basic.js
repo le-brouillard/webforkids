@@ -12,4 +12,13 @@ function pull(){
 }
 
 let id = window.localStorage.getItem('ID');
-document.getElementById('greetings').innerHTML = id+'님,<br>반갑습니다!';
+if(id){
+    document.getElementById('greetings').innerHTML = id+'님,<br>반갑습니다!';
+} else{
+    document.getElementById('greetings').innerHTML = '로그인을 해주세요.';
+}
+
+
+
+document.getElementById('maker').addEventListener('mouseover', function (){document.getElementById('maker').innerHTML = '김누리';});
+document.getElementById('maker').addEventListener('mouseout', function (){document.getElementById('maker').innerHTML = '제작자';});

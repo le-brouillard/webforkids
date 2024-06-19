@@ -5,6 +5,8 @@ div.character{
     justify-content: space-around;
     margin: 10px;
     font-size: 20px;
+    padding: 40px 0px;
+    border-bottom: 2px dotted hotpink;
 }
 div.character>img{
     width: auto; height: 250px;
